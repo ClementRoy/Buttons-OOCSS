@@ -1,0 +1,385 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html"charset="utf-8">
+	<title>Button Pro - Documentation</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	
+    <script type="text/javascript" src="assets/shCore.js"></script>
+    <script type="text/javascript" src="assets/shBrushJScript.js"></script>
+    <script type="text/javascript" src="assets/shBrushXml.js"></script>
+    <script type="text/javascript" src="assets/shBrushPhp.js"></script>
+    <script type="text/javascript" src="assets/shBrushCss.js"></script>
+    <link rel="stylesheet" href="assets/shCore.css">
+    <link rel="stylesheet" href="assets/shThemeDefault.css">
+    <link rel="stylesheet" href="assets/shThemeMidnight.css">
+    
+    <link rel="stylesheet" href="assets/buttonPro.css">
+
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;Button Pro&rdquo; Documentation by &ldquo;Raspo&rdquo; v1.0</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;Button Pro&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 13/04/2011<br />
+					By: <a href="http://codecanyon.net/user/Raspo?ref=Raspo" target="_blank">Raspo</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">
+				Thank you for purchasing this item. If you have any questions that are beyond the scope of this help file, please feel free to email me using the contact form on my <a href="http://codecanyon.net/user/Raspo?ref=Raspo" target="_blank">profile page</a>. <br /> <strong>Thanks so much!</strong></p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#usage">Usage</a>
+				<ul>
+					<li><a href="#size">Changing size</a></li>
+					<li><a href="#color">Changing color</a></li>
+					<li><a href="#rounded">Rounded buttons</a></li>
+					<li><a href="#others">Other features</a></li>
+				</ul>
+			</li>
+			<li><a href="#extras">Extras</a></li>
+			<li><a href="#css">CSS</a></li>
+			<li><a href="#credits">Sources and Credits</a> <em class="quiet small"></em></li>
+		</ol>
+		
+		<hr>
+		
+		<h3 id="usage"><strong>A) Usage</strong> - <a href="#toc">top</a></h3>
+		<p>In order to use these buttons, you need to copy the "<strong>buttonPro.css</strong>" file to your server and link it inside the <strong>&lt;head&gt;</strong> section of the page with the following code:</p>
+		
+		<pre class="brush: html"> <link rel="stylesheet" type="text/css" href="buttonPro.css"/>	</pre>
+		
+		<p>To create a button, you just have to add a class of <strong>buttonPro</strong> to your link:</p>
+
+		<pre class="brush: html"> <a href="#" class="buttonPro">Some text</a> </pre>
+		
+		<p>This will create a white button like this:</p>
+		
+		<a href="#" class="buttonPro">Some text</a>
+		
+		<br /> <br /> <br />
+						
+		<h3 id="size">- <strong>Changing size</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			These buttons comes in three different sizes. <br />
+			To specify a size, you just need to add a class of <strong>small</strong> or <strong>large</strong> to your buttonPro element. <br />You don't need to specify the medium size, because that is the default.
+		</p>
+		
+		<strong>Small</strong> <br /><br />
+		<a href="#" class="buttonPro small">Some text</a> <br />
+		<pre class="brush: html"> <a href="#" class="buttonPro small">Some text</a> </pre><br />
+		
+		<hr />
+		
+		<strong>Medium</strong> <br /><br />
+		<a href="#" class="buttonPro">Some text</a> <br />
+		<pre class="brush: html"> <a href="#" class="buttonPro">Some text</a> </pre> <br />
+		
+		<hr />
+		
+		<strong>Large</strong> <br /><br />
+		<a href="#" class="buttonPro large">Some text</a> <br />
+		<pre class="brush: html"> <a href="#" class="buttonPro large">Some text</a> </pre> <br />
+		
+		 <br />
+		 
+		 
+		 
+		 
+		<h3 id="color">- <strong>Changing color</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			There are 11 colors available.<br />
+			To specify a color, you just need to add the name of the color as class to your buttonPro element. <br />
+			You don't need to specify the white one, because that is the default.
+		</p>
+		
+		<p>These are the colors (class-names) available:</p>
+		<ol>
+			<li>light_blue</li>
+			<li>blue</li>
+			<li>green</li>
+			<li>yellow</li>
+			<li>orange</li>
+			<li>red</li>
+			<li>pink</li>
+			<li>purple</li>
+			<li>grey</li>
+			<li>black</li>
+		</ol>
+		<p>(you can check the <strong><a href="../demo/colors.html" target="_blank">colors.html</a></strong> file - located in the demo folder -  as a reference)</p>
+		
+		<strong>Examples:</strong> <br /><br />
+		<a href="#" class="buttonPro small blue">Some text</a> <br />
+		<pre class="brush: html"> <a href="#" class="buttonPro small blue">Some text</a> </pre><br />
+		
+		<hr />
+		
+		<a href="#" class="buttonPro pink">Some text</a> <br />
+		<pre class="brush: html"> <a href="#" class="buttonPro pink">Some text</a> </pre> <br />
+		
+		<hr />
+
+		<a href="#" class="buttonPro large green">Some text</a> <br />
+		<pre class="brush: html"> <a href="#" class="buttonPro large green">Some text</a> </pre> <br />
+		
+		 <br />
+		 
+		 
+		<h3 id="rounded">- <strong>Rounded buttons</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			As a bonus option, you can add a class of <strong>rounded</strong> to get an altervative rounded version of your button.<br />
+			<strong>NOTE:</strong><br />
+			This option won't affect the appearance of the button on browsers that don't support the border-radius css feature (Like IE6, IE7, IE8).
+		</p>
+		
+		<strong>Examples:</strong> <br /><br />
+		<a href="#" class="buttonPro small blue rounded">Some text</a> <br />
+		<pre class="brush: html"> <a href="#" class="buttonPro small blue rounded">Some text</a> </pre><br />
+		
+		<hr />
+		
+		<a href="#" class="buttonPro pink rounded">Some text</a> <br />
+		<pre class="brush: html"> <a href="#" class="buttonPro pink rounded">Some text</a> </pre> <br />
+		
+		<hr />
+
+		<a href="#" class="buttonPro large rounded">Some text</a> <br />
+		<pre class="brush: html"> <a href="#" class="buttonPro large rounded">Some text</a> </pre> <br />
+		
+		
+
+		
+
+        <br />
+        
+        
+        
+        <h3 id="others">- <strong>Other features</strong> - <a href="#toc">top</a></h3>
+        
+        <p>You can apply the <strong>buttonPro</strong> class to any element, not just links. <br />
+        	You may especially be interested in adding the buttonPro style to <strong>inputs</strong> or <strong>buttons</strong>.</p>
+        	
+        <strong>Examples:</strong> <br /><br />
+		<input type="submit" class="buttonPro rounded purple" value="This is an input" /> <br />
+		<pre class="brush: html"> <input type="submit" class="buttonPro rounded purple" value="This is an input" /> </pre><br />
+		
+		<hr />
+		
+		<button type="submit" class="buttonPro blue" >Button</button> <br />
+		<pre class="brush: html"> <button type="submit" class="buttonPro large light_blue" >Button</button> </pre> <br />
+		
+		<br /><br />
+		
+		<p>You can also insert icons inside the buttons.  <br />
+			All you need to do is find a nice image and insert it inside the link, using the <strong>&lt;img /&gt;</strong> element, as you would usually do in html. <br />
+			For a better result, the height of the image should be the same as the font-size of the text of the button (12px for the medium sized button, 11px for the small one, 20px for the large one).
+		</p>
+		
+		<strong>Examples:</strong> <br /><br />
+		<a href="#" class="buttonPro large green">Download <img src="../demo/img/download.png" alt="download" /></a> <br />
+		<pre class="brush: html"> <a href="#" class="buttonPro large green">Download <img src="../demo/img/download.png" alt="download" /></a> </pre><br />
+		
+		<hr />
+		
+		<a href="#" class="buttonPro rounded red"><img src="../demo/img/delete.png" alt="delete" /> Delete</a> <br />
+		<pre class="brush: html"> <a href="#" class="buttonPro rounded red"><img src="../demo/img/delete.png" alt="delete" /> Delete</a> </pre> <br />
+		
+		<p>Only two icons ( located in the demo/img/ folder )are included in the package. You can download the complete icon set from <a href="http://www.iconsweets.com/" target="_blank">http://www.iconsweets.com/</a>.</p>
+		
+		<br /><br />
+		
+       
+        
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<hr />		
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+
+		<h3 id="extras"><strong>B) Extras </strong> - <a href="#toc">top</a></h3>
+
+		<p>Included in the package there is also a set of buttons used by famous web services, recreated in pure CSS3. <br /> These buttons don't have anything to do with the main buttonPro set, there is only one size available and their usage is pretty straightforward: <br /> add the specific class name to an element. </p>
+		
+		
+		<strong>Examples:</strong> <br /><br />
+		<a href="#" class="googleButton">I'm Feeling Lucky</a> <br />
+		<pre class="brush: html"> <a href="#" class="googleButton">I'm Feeling Lucky</a> </pre><br />
+		
+		<hr />
+		
+		<a href="#" class="twitterButton">Tweet</a>
+		<br />
+		<pre class="brush: html"> <a href="#" class="twitterButton">Tweet</a>  </pre><br />
+			
+		<hr />
+			
+		<a href="#" class="twitterFollowButton">Following</a>
+		<br />
+		<pre class="brush: html"> <a href="#" class="twitterFollowButton">Following</a>  </pre><br />
+			
+		<hr />
+						
+		<a href="#" class="facebookButton">Cancel</a>
+		<br />
+		<pre class="brush: html"> <a href="#" class="facebookButton">Cancel</a>  </pre><br />
+			
+		<hr />
+						
+		<a href="#" class="facebookConfirmButton">Confirm</a>	
+		<br />
+		<pre class="brush: html"> <a href="#" class="facebookConfirmButton">Confirm</a> </pre> <br />
+			
+		<hr />
+						
+		<a href="#" class="wordpressButton">Preview</a>	
+		<br />
+		<pre class="brush: html"> <a href="#" class="wordpressButton">Preview</a> </pre> <br />
+			
+		<hr />
+						
+		<a href="#" class="wordpressConfirmButton">Confirm</a>	
+		<br />
+		<pre class="brush: html"> <a href="#" class="wordpressConfirmButton">Confirm</a> </pre> <br />
+		
+		
+		
+		
+		<br />
+        
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<hr />		
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+
+		<h3 id="css"><strong>C) CSS </strong> - <a href="#toc">top</a></h3>
+
+		<p>The <strong>buttonPro.css</strong> file is divided into sections using comments.</p>
+		
+		<ol>
+			<li><strong>Defaults &amp; General Styling</strong>: <br />
+				Here is the defined the basic buttonPro class, the three sizes available and the optional <strong>rounded</strong> version.
+				Here is also defined the appearance of the default (white) button. <br />
+				If you want to make changes to the font, padding or if you want to add margins, this is the right place to look. 
+			</li>
+			<li><strong>Color Variations</strong>: <br />
+				Here is defined the appearance of each color variation. Every color has different styling for the normal, hover and active state.
+			</li>
+			<li><strong>Extras</strong>: <br />
+				This is were the google, twitter, facebook and wordpress button designs are recreated.
+				They don't have anything to do with the <strong>buttonPro</strong> class. Each of these buttons has its own custom design, custom font, size etc.
+				<br />
+				If you are not interested in any of these button designs, you can easily get rid of this part of the code.
+			</li>
+		</ol>
+		
+		<br />
+
+		<hr>
+		
+	
+		
+		<h3 id="credits"><strong>G) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+		
+		<p>I've used the following images, icons or other files as listed.
+		
+ 		<ul>
+			<li>[icons] iconSweets by Yummygum - <a href="http://www.iconsweets.com/" target="_blank">http://www.iconsweets.com/</a></li>
+		</ul>
+		
+		<hr>
+		
+		
+		<p>Once again, thank you so much for purchasing this item. As I've said at the beginning, I'd be glad to help you if you have any questions relating to this item. No guarantees, but I'll do my best to assist.</p> 
+		
+		<p class="append-bottom alt large"><strong>Tommaso</strong><br />
+			<a href="http://tommasoraspo.com">Personal portfolio</a> | <a href="http://themeforest.net/user/Raspo/portfolio/">Portfolio on CodeCanyon</a> | <a href="http://twitter.com/R4SPO">Twitter</a>
+		</p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+	
+	<script type="text/javascript">
+         SyntaxHighlighter.all()
+    </script>	
+
+</body>
+</html>

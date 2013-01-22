@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+	<link rel="stylesheet" href="css/layout.css"/>
+	<link rel="stylesheet" href="css/buttons.css"/>
+
+	<script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('.button').click(function(e){
+				var classes = $(this).attr('class');
+				$(this).parent().find('pre.source-code').html('<span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"'+classes+'"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"'+classes+'"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"'+classes+'"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span>');
+				e.preventDefault();
+			});
+
+			$('#controls td').click(function(e){
+				$(this).toggleClass('selected');
+
+				var filters = new Array();
+
+				$('#controls td').each(function(i){
+					if($(this).hasClass('selected')) {
+						var filter = $(this).attr('id');
+						//console.log(filter);
+						filters.push(filter);
+					}
+				});
+				
+				/*
+				$(filters).each(function(i){
+					console.log(i);					
+				});
+				*/
+				console.log(filters);
+				
+				$(filters).each(function(i){
+					console.log(filters[i]);
+					$('.buttons').each(function(i){
+						var id = $(this).attr('class');
+						console.log(id):
+						console.log('hello'+i);
+					});
+				});
+				/*
+				$('.buttons').each(function(i){
+					$(filters).each(function(i){
+						if(!$(this).hasClass(filters[i]) ) {
+							$(this).fadeOut();
+						}
+						else if($(this).css('display') == "none"){
+							$(this).fadeIn();
+						}
+					});
+				});
+				*/
+					
+
+				e.preventDefault();
+			});
+
+		});
+	</script>
+
+</head>
+<body>
+	<table id="controls" cellpadding="0" cellspacing="0">
+		<tr>
+			<th colspan="3" scope="colgroup">Sizes</th>
+			<th colspan="3" scope="colgroup">Shapes</th>
+			<th colspan="3" scope="colgroup">Colors</th>
+		</tr>
+		<tr>
+			<td id="size-small">Small</td>
+			<td id="size-normal">Normal</td>
+			<td id="size-large">Large</td>
+			<td id="shape-rounded">Rounded</td>
+			<td id="shape-normal">Normal</td>
+			<td id="shape-squared">Squared</td>
+			<td id="color-matt">Matt</td>
+			<td id="color-normal">Normal</td>
+			<td id="color-glossy">Glossy</td>
+		</tr>
+	</table>
+	<div id="wrapper">
+
+		<a href="#" class="button">Click me!</a>
+		<input type="submit" class="button" value="click me"/>
+		<input type="button" class="button" value="click me"/>
+
+
+		<div class="buttons shape-normal size-small color-matt">
+			<h2>Small - Normal - Matt</h2>
+			<a href="#" class="button small matt purple">Click me!</a>
+			<a href="#" class="button small matt pink">Click me!</a>
+			<a href="#" class="button small matt red">Click me!</a>
+			<a href="#" class="button small matt brown">Click me!</a>
+			<a href="#" class="button small matt orange">Click me!</a>
+			<a href="#" class="button small matt yellow dark">Click me!</a>
+			<a href="#" class="button small matt green">Click me!</a>
+			<a href="#" class="button small matt light-blue">Click me!</a>
+			<a href="#" class="button small matt blue">Click me!</a>
+			<a href="#" class="button small matt black">Click me!</a>
+			<a href="#" class="button small matt gray">Click me!</a>
+			<a href="#" class="button small matt grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button small matt"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button small matt"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button small matt"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons size-normal shape-normal color-matt">
+			<h2>Normal - Normal - Matt</h2>
+			<a href="#" class="button matt purple">Click me!</a>
+			<a href="#" class="button matt pink">Click me!</a>
+			<a href="#" class="button matt red">Click me!</a>
+			<a href="#" class="button matt brown">Click me!</a>
+			<a href="#" class="button matt orange">Click me!</a>
+			<a href="#" class="button matt yellow dark">Click me!</a>
+			<a href="#" class="button matt green">Click me!</a>
+			<a href="#" class="button matt light-blue">Click me!</a>
+			<a href="#" class="button matt blue">Click me!</a>
+			<a href="#" class="button matt black">Click me!</a>
+			<a href="#" class="button matt gray">Click me!</a>
+			<a href="#" class="button matt grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button matt"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button matt"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button matt"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-normal size-large color-matt">
+			<h2>Large - Normal - Matt</h2>
+			<a href="#" class="button large matt purple">Click me!</a>
+			<a href="#" class="button large matt pink">Click me!</a>
+			<a href="#" class="button large matt red">Click me!</a>
+			<a href="#" class="button large matt brown">Click me!</a>
+			<a href="#" class="button large matt orange">Click me!</a>
+			<a href="#" class="button large matt yellow dark">Click me!</a>
+			<a href="#" class="button large matt green">Click me!</a>
+			<a href="#" class="button large matt light-blue">Click me!</a>
+			<a href="#" class="button large matt blue">Click me!</a>
+			<a href="#" class="button large matt black">Click me!</a>
+			<a href="#" class="button large matt gray">Click me!</a>
+			<a href="#" class="button large matt grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button large matt"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button large matt"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button large matt"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-normal size-small color-normal">
+			<h2>Normal - Small - Normal</h2>
+			<a href="#" class="button small purple">Click me!</a>
+			<a href="#" class="button small pink">Click me!</a>
+			<a href="#" class="button small red">Click me!</a>
+			<a href="#" class="button small brown">Click me!</a>
+			<a href="#" class="button small orange">Click me!</a>
+			<a href="#" class="button small yellow dark">Click me!</a>
+			<a href="#" class="button small green">Click me!</a>
+			<a href="#" class="button small light-blue">Click me!</a>
+			<a href="#" class="button small blue">Click me!</a>
+			<a href="#" class="button small black">Click me!</a>
+			<a href="#" class="button small gray">Click me!</a>
+			<a href="#" class="button small grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button small"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button small"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button small"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-normal size-normal color-normal">
+			<h2>Normal - Normal - Normal</h2>
+			<a href="#" class="button purple">Click me!</a>
+			<a href="#" class="button pink">Click me!</a>
+			<a href="#" class="button red">Click me!</a>
+			<a href="#" class="button brown">Click me!</a>
+			<a href="#" class="button orange">Click me!</a>
+			<a href="#" class="button yellow dark">Click me!</a>
+			<a href="#" class="button green">Click me!</a>
+			<a href="#" class="button light-blue">Click me!</a>
+			<a href="#" class="button blue">Click me!</a>
+			<a href="#" class="button black">Click me!</a>
+			<a href="#" class="button gray">Click me!</a>
+			<a href="#" class="button grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-normal size-large color-normal">
+			<h2>Large - Normal - Normal</h2>
+			<a href="#" class="button large purple">Click me!</a>
+			<a href="#" class="button large pink">Click me!</a>
+			<a href="#" class="button large red">Click me!</a>
+			<a href="#" class="button large brown">Click me!</a>
+			<a href="#" class="button large orange">Click me!</a>
+			<a href="#" class="button large yellow dark">Click me!</a>
+			<a href="#" class="button large green">Click me!</a>
+			<a href="#" class="button large light-blue">Click me!</a>
+			<a href="#" class="button large blue">Click me!</a>
+			<a href="#" class="button large black">Click me!</a>
+			<a href="#" class="button large gray">Click me!</a>
+			<a href="#" class="button large grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button large"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button large"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button large"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-normal size-small color-glossy">
+			<h2>Small - Normal - Glossy</h2>
+			<a href="#" class="button small glossy purple">Click me!</a>
+			<a href="#" class="button small glossy pink">Click me!</a>
+			<a href="#" class="button small glossy red">Click me!</a>
+			<a href="#" class="button small glossy brown">Click me!</a>
+			<a href="#" class="button small glossy orange">Click me!</a>
+			<a href="#" class="button small glossy yellow dark">Click me!</a>
+			<a href="#" class="button small glossy green">Click me!</a>
+			<a href="#" class="button small glossy light-blue">Click me!</a>
+			<a href="#" class="button small glossy blue">Click me!</a>
+			<a href="#" class="button small glossy black">Click me!</a>
+			<a href="#" class="button small glossy gray">Click me!</a>
+			<a href="#" class="button small glossy grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button small glossy"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button small glossy"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button small glossy"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-normal size-normal color-glossy">
+			<h2>Normal - Normal - Glossy</h2>
+			<a href="#" class="button glossy purple">Click me!</a>
+			<a href="#" class="button glossy pink">Click me!</a>
+			<a href="#" class="button glossy red">Click me!</a>
+			<a href="#" class="button glossy brown">Click me!</a>
+			<a href="#" class="button glossy orange">Click me!</a>
+			<a href="#" class="button glossy yellow dark">Click me!</a>
+			<a href="#" class="button glossy green">Click me!</a>
+			<a href="#" class="button glossy light-blue">Click me!</a>
+			<a href="#" class="button glossy blue">Click me!</a>
+			<a href="#" class="button glossy black">Click me!</a>
+			<a href="#" class="button glossy gray">Click me!</a>
+			<a href="#" class="button glossy grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button glossy"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button glossy"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button glossy"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-normal size-large color-glossy">
+			<h2>Large - Normal - Glossy</h2>
+			<a href="#" class="button large glossy purple">Click me!</a>
+			<a href="#" class="button large glossy pink">Click me!</a>
+			<a href="#" class="button large glossy red">Click me!</a>
+			<a href="#" class="button large glossy brown">Click me!</a>
+			<a href="#" class="button large glossy orange">Click me!</a>
+			<a href="#" class="button large glossy yellow dark">Click me!</a>
+			<a href="#" class="button large glossy green">Click me!</a>
+			<a href="#" class="button large glossy light-blue">Click me!</a>
+			<a href="#" class="button large glossy blue">Click me!</a>
+			<a href="#" class="button large glossy black">Click me!</a>
+			<a href="#" class="button large glossy gray">Click me!</a>
+			<a href="#" class="button large glossy grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button large glossy"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button large glossy"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button large glossy"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+
+
+
+
+		<div class="buttons shape-rounded size-small color-matt">
+			<h2>Small - Rounded - Matt</h2>
+			<a href="#" class="button rounded small matt purple">Click me!</a>
+			<a href="#" class="button rounded small matt pink">Click me!</a>
+			<a href="#" class="button rounded small matt red">Click me!</a>
+			<a href="#" class="button rounded small matt brown">Click me!</a>
+			<a href="#" class="button rounded small matt orange">Click me!</a>
+			<a href="#" class="button rounded small matt yellow dark">Click me!</a>
+			<a href="#" class="button rounded small matt green">Click me!</a>
+			<a href="#" class="button rounded small matt light-blue">Click me!</a>
+			<a href="#" class="button rounded small matt blue">Click me!</a>
+			<a href="#" class="button rounded small matt black">Click me!</a>
+			<a href="#" class="button rounded small matt gray">Click me!</a>
+			<a href="#" class="button rounded small matt grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded small matt"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded small matt"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded small matt"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-rounded size-normal color-matt">
+			<h2>Normal - Rounded - Matt</h2>
+			<a href="#" class="button rounded matt purple">Click me!</a>
+			<a href="#" class="button rounded matt pink">Click me!</a>
+			<a href="#" class="button rounded matt red">Click me!</a>
+			<a href="#" class="button rounded matt brown">Click me!</a>
+			<a href="#" class="button rounded matt orange">Click me!</a>
+			<a href="#" class="button rounded matt yellow dark">Click me!</a>
+			<a href="#" class="button rounded matt green">Click me!</a>
+			<a href="#" class="button rounded matt light-blue">Click me!</a>
+			<a href="#" class="button rounded matt blue">Click me!</a>
+			<a href="#" class="button rounded matt black">Click me!</a>
+			<a href="#" class="button rounded matt gray">Click me!</a>
+			<a href="#" class="button rounded matt grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded matt"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded matt"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded matt"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-rounded size-large color-matt">
+			<h2>Large - Rounded - Matt</h2>
+			<a href="#" class="button rounded large matt purple">Click me!</a>
+			<a href="#" class="button rounded large matt pink">Click me!</a>
+			<a href="#" class="button rounded large matt red">Click me!</a>
+			<a href="#" class="button rounded large matt brown">Click me!</a>
+			<a href="#" class="button rounded large matt orange">Click me!</a>
+			<a href="#" class="button rounded large matt yellow dark">Click me!</a>
+			<a href="#" class="button rounded large matt green">Click me!</a>
+			<a href="#" class="button rounded large matt light-blue">Click me!</a>
+			<a href="#" class="button rounded large matt blue">Click me!</a>
+			<a href="#" class="button rounded large matt black">Click me!</a>
+			<a href="#" class="button rounded large matt gray">Click me!</a>
+			<a href="#" class="button rounded large matt grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded large matt"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded large matt"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded large matt"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-rounded size-small color-normal">
+			<h2>Small - Rounded - Normal</h2>
+			<a href="#" class="button rounded small purple">Click me!</a>
+			<a href="#" class="button rounded small pink">Click me!</a>
+			<a href="#" class="button rounded small red">Click me!</a>
+			<a href="#" class="button rounded small brown">Click me!</a>
+			<a href="#" class="button rounded small orange">Click me!</a>
+			<a href="#" class="button rounded small yellow dark">Click me!</a>
+			<a href="#" class="button rounded small green">Click me!</a>
+			<a href="#" class="button rounded small light-blue">Click me!</a>
+			<a href="#" class="button rounded small blue">Click me!</a>
+			<a href="#" class="button rounded small black">Click me!</a>
+			<a href="#" class="button rounded small gray">Click me!</a>
+			<a href="#" class="button rounded small grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded small"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded small"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded small"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-rounded size-normal color-normal">
+			<h2>Normal - Rounded - Normal</h2>
+			<a href="#" class="button rounded purple">Click me!</a>
+			<a href="#" class="button rounded pink">Click me!</a>
+			<a href="#" class="button rounded red">Click me!</a>
+			<a href="#" class="button rounded brown">Click me!</a>
+			<a href="#" class="button rounded orange">Click me!</a>
+			<a href="#" class="button rounded yellow dark">Click me!</a>
+			<a href="#" class="button rounded green">Click me!</a>
+			<a href="#" class="button rounded light-blue">Click me!</a>
+			<a href="#" class="button rounded blue">Click me!</a>
+			<a href="#" class="button rounded black">Click me!</a>
+			<a href="#" class="button rounded gray">Click me!</a>
+			<a href="#" class="button rounded grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-rounded size-large color-normal">
+			<h2>Large - Rounded - Normal</h2>
+			<a href="#" class="button rounded large purple">Click me!</a>
+			<a href="#" class="button rounded large pink">Click me!</a>
+			<a href="#" class="button rounded large red">Click me!</a>
+			<a href="#" class="button rounded large brown">Click me!</a>
+			<a href="#" class="button rounded large orange">Click me!</a>
+			<a href="#" class="button rounded large yellow dark">Click me!</a>
+			<a href="#" class="button rounded large green">Click me!</a>
+			<a href="#" class="button rounded large light-blue">Click me!</a>
+			<a href="#" class="button rounded large blue">Click me!</a>
+			<a href="#" class="button rounded large black">Click me!</a>
+			<a href="#" class="button rounded large gray">Click me!</a>
+			<a href="#" class="button rounded large grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded large"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded large"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded large"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-rounded size-small color-glossy">
+			<h2>Small - Rounded - Glossy</h2>
+			<a href="#" class="button rounded small glossy purple">Click me!</a>
+			<a href="#" class="button rounded small glossy pink">Click me!</a>
+			<a href="#" class="button rounded small glossy red">Click me!</a>
+			<a href="#" class="button rounded small glossy brown">Click me!</a>
+			<a href="#" class="button rounded small glossy orange">Click me!</a>
+			<a href="#" class="button rounded small glossy yellow dark">Click me!</a>
+			<a href="#" class="button rounded small glossy green">Click me!</a>
+			<a href="#" class="button rounded small glossy light-blue">Click me!</a>
+			<a href="#" class="button rounded small glossy blue">Click me!</a>
+			<a href="#" class="button rounded small glossy black">Click me!</a>
+			<a href="#" class="button rounded small glossy gray">Click me!</a>
+			<a href="#" class="button rounded small glossy grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded small glossy"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded small glossy"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded small glossy"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-rounded size-normal color-glossy">
+			<h2>Normal - Rounded - Glossy</h2>
+			<a href="#" class="button rounded glossy purple">Click me!</a>
+			<a href="#" class="button rounded glossy pink">Click me!</a>
+			<a href="#" class="button rounded glossy red">Click me!</a>
+			<a href="#" class="button rounded glossy brown">Click me!</a>
+			<a href="#" class="button rounded glossy orange">Click me!</a>
+			<a href="#" class="button rounded glossy yellow dark">Click me!</a>
+			<a href="#" class="button rounded glossy green">Click me!</a>
+			<a href="#" class="button rounded glossy light-blue">Click me!</a>
+			<a href="#" class="button rounded glossy blue">Click me!</a>
+			<a href="#" class="button rounded glossy black">Click me!</a>
+			<a href="#" class="button rounded glossy gray">Click me!</a>
+			<a href="#" class="button rounded glossy grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded glossy"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded glossy"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded glossy"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-rounded size-large color-glossy">
+			<h2>Large - Rounded - Glossy</h2>
+			<a href="#" class="button rounded large glossy purple">Click me!</a>
+			<a href="#" class="button rounded large glossy pink">Click me!</a>
+			<a href="#" class="button rounded large glossy red">Click me!</a>
+			<a href="#" class="button rounded large glossy brown">Click me!</a>
+			<a href="#" class="button rounded large glossy orange">Click me!</a>
+			<a href="#" class="button rounded large glossy yellow dark">Click me!</a>
+			<a href="#" class="button rounded large glossy green">Click me!</a>
+			<a href="#" class="button rounded large glossy light-blue">Click me!</a>
+			<a href="#" class="button rounded large glossy blue">Click me!</a>
+			<a href="#" class="button rounded large glossy black">Click me!</a>
+			<a href="#" class="button rounded large glossy gray">Click me!</a>
+			<a href="#" class="button rounded large glossy grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded large glossy"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded large glossy"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button rounded large glossy"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+
+
+		<div class="buttons shape-squared size-small color-matt">
+			<h2>Small - Squared - Matt</h2>
+			<a href="#" class="button squared small matt purple">Click me!</a>
+			<a href="#" class="button squared small matt pink">Click me!</a>
+			<a href="#" class="button squared small matt red">Click me!</a>
+			<a href="#" class="button squared small matt brown">Click me!</a>
+			<a href="#" class="button squared small matt orange">Click me!</a>
+			<a href="#" class="button squared small matt yellow dark">Click me!</a>
+			<a href="#" class="button squared small matt green">Click me!</a>
+			<a href="#" class="button squared small matt light-blue">Click me!</a>
+			<a href="#" class="button squared small matt blue">Click me!</a>
+			<a href="#" class="button squared small matt black">Click me!</a>
+			<a href="#" class="button squared small matt gray">Click me!</a>
+			<a href="#" class="button squared small matt grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared small matt"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared small matt"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared small matt"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-squared size-normal color-matt">
+			<h2>Normal - Squared - Matt</h2>
+			<a href="#" class="button squared matt purple">Click me!</a>
+			<a href="#" class="button squared matt pink">Click me!</a>
+			<a href="#" class="button squared matt red">Click me!</a>
+			<a href="#" class="button squared matt brown">Click me!</a>
+			<a href="#" class="button squared matt orange">Click me!</a>
+			<a href="#" class="button squared matt yellow dark">Click me!</a>
+			<a href="#" class="button squared matt green">Click me!</a>
+			<a href="#" class="button squared matt light-blue">Click me!</a>
+			<a href="#" class="button squared matt blue">Click me!</a>
+			<a href="#" class="button squared matt black">Click me!</a>
+			<a href="#" class="button squared matt gray">Click me!</a>
+			<a href="#" class="button squared matt grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared matt"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared matt"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared matt"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-squared size-large color-matt">
+			<h2>Large - Squared - Matt</h2>
+			<a href="#" class="button squared large matt purple">Click me!</a>
+			<a href="#" class="button squared large matt pink">Click me!</a>
+			<a href="#" class="button squared large matt red">Click me!</a>
+			<a href="#" class="button squared large matt brown">Click me!</a>
+			<a href="#" class="button squared large matt orange">Click me!</a>
+			<a href="#" class="button squared large matt yellow dark">Click me!</a>
+			<a href="#" class="button squared large matt green">Click me!</a>
+			<a href="#" class="button squared large matt light-blue">Click me!</a>
+			<a href="#" class="button squared large matt blue">Click me!</a>
+			<a href="#" class="button squared large matt black">Click me!</a>
+			<a href="#" class="button squared large matt gray">Click me!</a>
+			<a href="#" class="button squared large matt grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared large matt"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared large matt"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared large matt"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-squared size-small color-normal">
+			<h2>Small - Squared - Normal</h2>
+			<a href="#" class="button squared small purple">Click me!</a>
+			<a href="#" class="button squared small pink">Click me!</a>
+			<a href="#" class="button squared small red">Click me!</a>
+			<a href="#" class="button squared small brown">Click me!</a>
+			<a href="#" class="button squared small orange">Click me!</a>
+			<a href="#" class="button squared small yellow dark">Click me!</a>
+			<a href="#" class="button squared small green">Click me!</a>
+			<a href="#" class="button squared small light-blue">Click me!</a>
+			<a href="#" class="button squared small blue">Click me!</a>
+			<a href="#" class="button squared small black">Click me!</a>
+			<a href="#" class="button squared small gray">Click me!</a>
+			<a href="#" class="button squared small grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared small"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared small"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared small"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-squared size-normal color-normal">
+			<h2>Normal - Squared - Normal</h2>
+			<a href="#" class="button squared purple">Click me!</a>
+			<a href="#" class="button squared pink">Click me!</a>
+			<a href="#" class="button squared red">Click me!</a>
+			<a href="#" class="button squared brown">Click me!</a>
+			<a href="#" class="button squared orange">Click me!</a>
+			<a href="#" class="button squared yellow dark">Click me!</a>
+			<a href="#" class="button squared green">Click me!</a>
+			<a href="#" class="button squared light-blue">Click me!</a>
+			<a href="#" class="button squared blue">Click me!</a>
+			<a href="#" class="button squared black">Click me!</a>
+			<a href="#" class="button squared gray">Click me!</a>
+			<a href="#" class="button squared grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-squared size-large color-normal">
+			<h2>Large - Squared - Normal</h2>
+			<a href="#" class="button squared large purple">Click me!</a>
+			<a href="#" class="button squared large pink">Click me!</a>
+			<a href="#" class="button squared large red">Click me!</a>
+			<a href="#" class="button squared large brown">Click me!</a>
+			<a href="#" class="button squared large orange">Click me!</a>
+			<a href="#" class="button squared large yellow dark">Click me!</a>
+			<a href="#" class="button squared large green">Click me!</a>
+			<a href="#" class="button squared large light-blue">Click me!</a>
+			<a href="#" class="button squared large blue">Click me!</a>
+			<a href="#" class="button squared large black">Click me!</a>
+			<a href="#" class="button squared large gray">Click me!</a>
+			<a href="#" class="button squared large grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared large"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared large"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared large"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-squared size-small color-glossy">
+			<h2>Small - Squared - Glossy</h2>
+			<a href="#" class="button squared small glossy purple">Click me!</a>
+			<a href="#" class="button squared small glossy pink">Click me!</a>
+			<a href="#" class="button squared small glossy red">Click me!</a>
+			<a href="#" class="button squared small glossy brown">Click me!</a>
+			<a href="#" class="button squared small glossy orange">Click me!</a>
+			<a href="#" class="button squared small glossy yellow dark">Click me!</a>
+			<a href="#" class="button squared small glossy green">Click me!</a>
+			<a href="#" class="button squared small glossy light-blue">Click me!</a>
+			<a href="#" class="button squared small glossy blue">Click me!</a>
+			<a href="#" class="button squared small glossy black">Click me!</a>
+			<a href="#" class="button squared small glossy gray">Click me!</a>
+			<a href="#" class="button squared small glossy grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared small glossy"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared small glossy"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared small glossy"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-squared size-normal color-glossy">
+			<h2>Normal - Squared - Glossy</h2>
+			<a href="#" class="button squared glossy purple">Click me!</a>
+			<a href="#" class="button squared glossy pink">Click me!</a>
+			<a href="#" class="button squared glossy red">Click me!</a>
+			<a href="#" class="button squared glossy brown">Click me!</a>
+			<a href="#" class="button squared glossy orange">Click me!</a>
+			<a href="#" class="button squared glossy yellow dark">Click me!</a>
+			<a href="#" class="button squared glossy green">Click me!</a>
+			<a href="#" class="button squared glossy light-blue">Click me!</a>
+			<a href="#" class="button squared glossy blue">Click me!</a>
+			<a href="#" class="button squared glossy black">Click me!</a>
+			<a href="#" class="button squared glossy gray">Click me!</a>
+			<a href="#" class="button squared glossy grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared glossy"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared glossy"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared glossy"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+		<div class="buttons shape-squared size-large color-glossy">
+			<h2>Large - Squared - Glossy</h2>
+			<a href="#" class="button squared large glossy purple">Click me!</a>
+			<a href="#" class="button squared large glossy pink">Click me!</a>
+			<a href="#" class="button squared large glossy red">Click me!</a>
+			<a href="#" class="button squared large glossy brown">Click me!</a>
+			<a href="#" class="button squared large glossy orange">Click me!</a>
+			<a href="#" class="button squared large glossy yellow dark">Click me!</a>
+			<a href="#" class="button squared large glossy green">Click me!</a>
+			<a href="#" class="button squared large glossy light-blue">Click me!</a>
+			<a href="#" class="button squared large glossy blue">Click me!</a>
+			<a href="#" class="button squared large glossy black">Click me!</a>
+			<a href="#" class="button squared large glossy gray">Click me!</a>
+			<a href="#" class="button squared large glossy grey dark">Click me!</a>
+			<pre class="source-code"><span class="code-blue">&lt;a</span> <span class="code-red">href</span>=<span class="code-purple">"#"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared large glossy"</span><span class="code-blue">&gt;</span>Text<span class="code-blue">&lt;/a&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"submit"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared large glossy"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /><span class="code-blue">&lt;input</span> <span class="code-red">type</span>=<span class="code-purple">"button"</span> <span class="code-red">class</span>=<span class="code-purple">"button squared large glossy"</span> <span class="code-red">value</span>=<span class="code-purple">"Text"</span> <span class="code-blue">/&gt;</span><br /></pre>
+		</div>
+
+
+
+	</div>
+	<!-- ©® -->
+</body>
+</html>
